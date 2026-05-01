@@ -92,9 +92,17 @@ GET /api/pokemon?page=1&limit=20&type=fire
 - Swagger UI: `/api-docs`
 - Postman collection: [docs/My-API.postman_collection.json](./docs/My-API.postman_collection.json)
 
+## Repository
+
+- GitHub: [https://github.com/Murshudlumaryam/My_api](https://github.com/Murshudlumaryam/My_api)
+
 ## Deployment
 
-When you deploy the project, add your public URL here:
+Render quick deploy:
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Murshudlumaryam/My_api)
+
+After deployment, replace the placeholders below with your real public URLs:
 
 - Live API: `your-cloud-url-here`
 - Swagger UI: `your-cloud-url-here/api-docs`
