@@ -1,0 +1,146 @@
+{
+  "info": {
+    "name": "My API",
+    "_postman_id": "8d2d53db-7395-4ed8-86ce-0326df6a27f4",
+    "description": "Postman collection for the Pokemon API project.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "token",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"demo_user\",\n  \"email\": \"demo@example.com\",\n  \"password\": \"secret123\"\n}"
+            },
+            "url": "{{baseUrl}}/api/auth/register"
+          }
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"demo@example.com\",\n  \"password\": \"secret123\"\n}"
+            },
+            "url": "{{baseUrl}}/api/auth/login"
+          }
+        },
+        {
+          "name": "Check Token",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/auth/token"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Pokemon",
+      "item": [
+        {
+          "name": "Get Pokemon List",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/pokemon?page=1&limit=20&type=fire"
+          }
+        },
+        {
+          "name": "Get One Pokemon",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/pokemon/25"
+          }
+        },
+        {
+          "name": "Create Pokemon",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pokedexId\": 2001,\n  \"name\": \"custommon\",\n  \"types\": [\"electric\"],\n  \"hp\": 70,\n  \"attack\": 88,\n  \"defense\": 65,\n  \"speed\": 90,\n  \"height\": 14,\n  \"weight\": 380,\n  \"imageUrl\": \"https://example.com/custommon.png\"\n}"
+            },
+            "url": "{{baseUrl}}/api/pokemon"
+          }
+        },
+        {
+          "name": "Update Pokemon",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"speed\": 95,\n  \"weight\": 390\n}"
+            },
+            "url": "{{baseUrl}}/api/pokemon/2001"
+          }
+        },
+        {
+          "name": "Delete Pokemon",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/pokemon/2001"
+          }
+        }
+      ]
+    }
+  ]
+}
