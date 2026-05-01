@@ -1,5 +1,0 @@
-PORT=3000
-DATABASE_URL=mongodb+srv://maryamurshudlu_db_user:SENIN_PASSWORDIN@cluster0.xxxxx.mongodb.net/pokemon_api?retryWrites=true&w=majority
-JWT_SECRET=my_api_secret_2026_maryam_8472
-BASE_URL=
-REDIS_URL=
